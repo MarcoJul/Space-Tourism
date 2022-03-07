@@ -1,16 +1,19 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import classes from "./App.module.css";
 
-import Image from "./assets/home/background-home-desktop.jpg";
-
-import Header from "./components/Header";
+import Layout from "./layout/Layout";
+import Home from "./components/Home";
 
 const App = () => {
   return (
-    <div>
-      <img src={Image} className={classes.background} />
-      <Header />
-      <h1>Space</h1>
-    </div>
+    <Layout>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </Layout>
   );
 };
 

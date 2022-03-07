@@ -14,7 +14,7 @@ const Header = () => {
             <li>
               <span className={classes.bold}>00</span> Home
             </li>
-            <li>
+            <li className={classes.active}>
               <span className={classes.bold}>01</span> Destination
             </li>
             <li>
