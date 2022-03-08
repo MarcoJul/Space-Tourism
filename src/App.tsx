@@ -4,16 +4,18 @@ import classes from "./App.module.css";
 
 import Layout from "./layout/Layout";
 import Home from "./components/Home";
+import Destination from "./components/Destination";
 
 const App = () => {
   return (
-    <Layout>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />}></Route>
+          <Route path="/destination" element={<Destination />}></Route>
         </Routes>
-      </BrowserRouter>
-    </Layout>
+      </Layout>
+    </BrowserRouter>
   );
 };
 

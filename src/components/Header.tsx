@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 import classes from "./Header.module.css";
 
 import { ReactComponent as Logo } from "../assets/shared/logo.svg";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,10 +15,14 @@ const Header = () => {
         <nav className={classes.navigation}>
           <ul className={classes.navigationIcons}>
             <li>
-              <span className={classes.bold}>00</span> Home
+              <NavLink to="/">
+                <span className={classes.bold}>00</span> Home
+              </NavLink>
             </li>
             <li className={classes.active}>
-              <span className={classes.bold}>01</span> Destination
+              <NavLink to="/destination">
+                <span className={classes.bold}>01</span> Destination
+              </NavLink>
             </li>
             <li>
               <span className={classes.bold}>02</span> Crew
