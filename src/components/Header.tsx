@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import classes from "./Header.module.css";
 
 import { ReactComponent as Logo } from "../assets/shared/logo.svg";
@@ -20,7 +18,7 @@ const Header = () => {
               </NavLink>
             </li>
             <li className={classes.headerList}>
-              <NavLink to="/destination" className={classes.headerLink}>
+              <NavLink to="/destination/moon" className={classes.headerLink}>
                 <span className={classes.bold}>01</span> Destination
               </NavLink>
             </li>

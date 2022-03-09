@@ -15,7 +15,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route
-            path="/destination"
+            path="/destination/:destination"
             element={<Destination items={data.destinations} />}
           ></Route>
         </Routes>

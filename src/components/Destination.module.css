@@ -3,7 +3,7 @@
 
 .sectionNumber {
   color: rgba(255, 255, 255, 0.253);
-  margin-right: 2.8rem;
+  margin-right: 2rem;
 }
 
 .titlePage {
@@ -59,9 +59,9 @@
 .text {
   font-size: 1.8rem;
   line-height: 3.2rem;
-  font-weight: 400;
+  font-weight: 300;
   color: #fff;
-  font-family: "Barlow", sans-serif;
+  font-family: "Barlow ", sans-serif;
   border-bottom: 2px solid rgba(255, 255, 255, 0.253);
   padding-bottom: 4.5rem;
 }
@@ -79,7 +79,9 @@
 .dataDescription {
   font-size: 1.4rem;
   margin-bottom: 1.4rem;
+  letter-spacing: 2.4px;
 }
+
 .data {
   font-family: "Bellefair", serif;
   font-size: 2.8rem;
