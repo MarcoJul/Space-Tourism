@@ -14,20 +14,20 @@ const Header = () => {
         </div>
         <nav className={classes.navigation}>
           <ul className={classes.navigationIcons}>
-            <li>
-              <NavLink to="/">
+            <li className={classes.headerList}>
+              <NavLink to="/" className={classes.headerLink}>
                 <span className={classes.bold}>00</span> Home
               </NavLink>
             </li>
-            <li className={classes.active}>
-              <NavLink to="/destination">
+            <li className={classes.headerList}>
+              <NavLink to="/destination" className={classes.headerLink}>
                 <span className={classes.bold}>01</span> Destination
               </NavLink>
             </li>
-            <li>
+            <li className={classes.headerList}>
               <span className={classes.bold}>02</span> Crew
             </li>
-            <li>
+            <li className={classes.headerList}>
               <span className={classes.bold}>03</span> Technology
             </li>
           </ul>

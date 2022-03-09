@@ -46,7 +46,7 @@ header {
   align-items: center;
 }
 
-li {
+.headerList {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,12 @@ li {
   height: 100%;
 }
 
-li:after {
+.headerLink {
+  color: #fff;
+  text-decoration: none;
+}
+
+.headerList:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -72,7 +77,7 @@ li:after {
   transform: scaleX(0);
 }
 
-li:hover:after {
+.headerList:hover:after {
   transform: scaleX(1);
   transition: all 0.8s;
 }

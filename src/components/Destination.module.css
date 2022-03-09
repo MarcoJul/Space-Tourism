@@ -1,26 +1,50 @@
 .mainContainer {
 }
 
+.sectionNumber {
+  color: rgba(255, 255, 255, 0.253);
+  margin-right: 2.8rem;
+}
+
 .titlePage {
   color: #fff;
+  letter-spacing: 2.7px;
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 400;
+  margin: 7.6rem 16.6rem;
 }
 
 .image {
-  width: 35rem;
+  width: 44.5rem;
+}
+
+.planetNav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3.5rem;
+  list-style-type: none;
+}
+
+.planetLink {
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 2.7px;
 }
 
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10rem;
+  gap: 15.7rem;
 }
 
 .textBox {
-  width: 50%;
+  width: 44.5rem;
 }
 
 .title {
@@ -29,9 +53,35 @@
   font-family: "Bellefair", serif;
   font-weight: 400;
   text-transform: uppercase;
+  margin-top: 4.5rem;
 }
 
 .text {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  line-height: 3.2rem;
+  font-weight: 400;
   color: #fff;
+  font-family: "Barlow", sans-serif;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.253);
+  padding-bottom: 4.5rem;
+}
+
+.dataSection {
+  display: flex;
+  gap: 8rem;
+  margin-top: 2.8rem;
+}
+
+.dataBox {
+  color: #fff;
+}
+
+.dataDescription {
+  font-size: 1.4rem;
+  margin-bottom: 1.4rem;
+}
+.data {
+  font-family: "Bellefair", serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
 }
