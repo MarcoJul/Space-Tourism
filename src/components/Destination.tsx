@@ -1,4 +1,4 @@
-import { Props, useState } from "react";
+import { useContext, useState } from "react";
 
 import { NavLink } from "react-router-dom";
 import classes from "./Destination.module.css";
@@ -7,6 +7,7 @@ import moonImage from "../assets/destination/image-moon.png";
 import marsImage from "../assets/destination/image-mars.png";
 import europaImage from "../assets/destination/image-europa.png";
 import titanImage from "../assets/destination/image-titan.png";
+import StatusContext from "../store/status-context";
 
 interface destinationProps {
   items: {
@@ -19,24 +20,25 @@ interface destinationProps {
 }
 
 const Destination: React.FC<destinationProps> = (props) => {
+  const ctx = useContext(StatusContext);
   const [destination, setDestination] = useState("moon");
   let destinationPlanet = props.items[0];
 
   let destinationImage;
-  if (destination === "moon") {
+  if (ctx.destinationStatus === "moon") {
     destinationImage = moonImage;
     destinationPlanet = props.items[0];
   }
-  if (destination === "mars") {
+  if (ctx.destinationStatus === "mars") {
     destinationImage = marsImage;
 
     destinationPlanet = props.items[1];
   }
-  if (destination === "europa") {
+  if (ctx.destinationStatus === "europa") {
     destinationImage = europaImage;
     destinationPlanet = props.items[2];
   }
-  if (destination === "titan") {
+  if (ctx.destinationStatus === "titan") {
     destinationImage = titanImage;
     destinationPlanet = props.items[3];
   }
@@ -55,7 +57,7 @@ const Destination: React.FC<destinationProps> = (props) => {
                 <NavLink
                   to="/destination/moon"
                   className={classes.planetLink}
-                  onClick={() => setDestination("moon")}
+                  onClick={() => ctx.setDestination("moon")}
                 >
                   Moon
                 </NavLink>
@@ -64,7 +66,7 @@ const Destination: React.FC<destinationProps> = (props) => {
                 <NavLink
                   to="/destination/mars"
                   className={classes.planetLink}
-                  onClick={() => setDestination("mars")}
+                  onClick={() => ctx.setDestination("mars")}
                 >
                   Mars
                 </NavLink>
@@ -73,7 +75,7 @@ const Destination: React.FC<destinationProps> = (props) => {
                 <NavLink
                   to="/destination/europa"
                   className={classes.planetLink}
-                  onClick={() => setDestination("europa")}
+                  onClick={() => ctx.setDestination("europa")}
                 >
                   Europa
                 </NavLink>
@@ -82,7 +84,7 @@ const Destination: React.FC<destinationProps> = (props) => {
                 <NavLink
                   to="/destination/titan"
                   className={classes.planetLink}
-                  onClick={() => setDestination("titan")}
+                  onClick={() => ctx.setDestination("titan")}
                 >
                   Titan
                 </NavLink>
