@@ -56,6 +56,12 @@
   margin-top: 4.5rem;
 }
 
+.animation {
+  animation-name: moveInBottom;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+}
+
 .text {
   font-size: 1.8rem;
   line-height: 3.2rem;
@@ -86,4 +92,16 @@
   font-family: "Bellefair", serif;
   font-size: 2.8rem;
   text-transform: uppercase;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

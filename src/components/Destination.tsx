@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { NavLink } from "react-router-dom";
 import classes from "./Destination.module.css";
@@ -21,8 +21,22 @@ interface destinationProps {
 
 const Destination: React.FC<destinationProps> = (props) => {
   const ctx = useContext(StatusContext);
-  const [destination, setDestination] = useState("moon");
+  const [animation, setAnimation] = useState(true);
   let destinationPlanet = props.items[0];
+
+  const { destinationStatus } = ctx;
+
+  useEffect(() => {
+    const animationInterval = setTimeout(() => {
+      console.log("false");
+      setAnimation(false);
+    }, 1500);
+    setAnimation(true);
+    console.log("true");
+    return () => {
+      clearInterval(animationInterval);
+    };
+  }, [destinationStatus]);
 
   let destinationImage;
   if (ctx.destinationStatus === "moon") {
@@ -91,7 +105,11 @@ const Destination: React.FC<destinationProps> = (props) => {
               </li>
             </ul>
           </nav>
-          <h3 className={classes.title}>{destinationPlanet.name}</h3>
+          <h3
+            className={`${classes.title} ${animation ? classes.animation : ""}`}
+          >
+            {destinationPlanet.name}
+          </h3>
           <p className={classes.text}>{destinationPlanet.description}</p>
           <div className={classes.dataSection}>
             <div className={classes.dataBox}>
