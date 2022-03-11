@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 
 import { NavLink } from "react-router-dom";
-import classes from "./Destination.module.css";
+import classes from "./Crew.module.css";
 
 import markImage from "../assets/crew/image-mark-shuttleworth.png";
 import douglasImage from "../assets/crew/image-douglas-hurley.png";
@@ -59,11 +59,19 @@ const Crew: React.FC<crewProps> = (props) => {
   return (
     <div className={classes.mainContainer}>
       <h2 className={classes.titlePage}>
-        <span className={classes.sectionNumber}>01</span> Pick Your Destination
+        <span className={classes.sectionNumber}>02</span> Meet your crew
       </h2>
       <div className={classes.content}>
-        <img src={crewImage} className={classes.image} />
         <div className={classes.textBox}>
+          <p className={classes.text}>{crewMember.role}</p>
+          <h3
+            className={`${classes.title} ${animation ? classes.animation : ""}`}
+          >
+            {crewMember.name}
+          </h3>
+          <div className={classes.dataSection}>
+            <p className={classes.data}>{crewMember.bio}</p>
+          </div>
           <nav>
             <ul className={classes.planetNav}>
               <li>
@@ -72,7 +80,7 @@ const Crew: React.FC<crewProps> = (props) => {
                   className={classes.planetLink}
                   onClick={() => ctx.setCrew("Douglas")}
                 >
-                  Moon
+                  <div className={classes.circle}></div>
                 </NavLink>
               </li>
               <li>
@@ -81,7 +89,7 @@ const Crew: React.FC<crewProps> = (props) => {
                   className={classes.planetLink}
                   onClick={() => ctx.setCrew("Mark")}
                 >
-                  Mars
+                  <div className={classes.circle}></div>
                 </NavLink>
               </li>
               <li>
@@ -90,7 +98,7 @@ const Crew: React.FC<crewProps> = (props) => {
                   className={classes.planetLink}
                   onClick={() => ctx.setCrew("Victor")}
                 >
-                  Europa
+                  <div className={classes.circle}></div>
                 </NavLink>
               </li>
               <li>
@@ -99,24 +107,13 @@ const Crew: React.FC<crewProps> = (props) => {
                   className={classes.planetLink}
                   onClick={() => ctx.setCrew("Anousheh")}
                 >
-                  Titan
+                  <div className={classes.circle}></div>
                 </NavLink>
               </li>
             </ul>
           </nav>
-          <h3
-            className={`${classes.title} ${animation ? classes.animation : ""}`}
-          >
-            {crewMember.name}
-          </h3>
-          <p className={classes.text}>{crewMember.role}</p>
-          <div className={classes.dataSection}>
-            <div className={classes.dataBox}>
-              <p className={classes.dataDescription}>AVG. DISTANCE</p>
-              <p className={classes.data}>{crewMember.bio}</p>
-            </div>
-          </div>
         </div>
+        <img src={crewImage} className={classes.image} />
       </div>
     </div>
   );

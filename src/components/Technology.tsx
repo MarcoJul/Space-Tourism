@@ -54,7 +54,7 @@ const Technology: React.FC<technologyProps> = (props) => {
   return (
     <div className={classes.mainContainer}>
       <h2 className={classes.titlePage}>
-        <span className={classes.sectionNumber}>01</span> Pick Your Destination
+        <span className={classes.sectionNumber}>03</span> Space Launch 101
       </h2>
       <div className={classes.content}>
         <img src={techImage} className={classes.image} />
