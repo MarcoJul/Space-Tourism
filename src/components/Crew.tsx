@@ -27,10 +27,8 @@ const Crew: React.FC<crewProps> = (props) => {
 
   useEffect(() => {
     const animationInterval = setTimeout(() => {
-      console.log("false");
       setAnimation(false);
     }, 1500);
-    setAnimation(true);
     console.log("true");
     return () => {
       clearInterval(animationInterval);

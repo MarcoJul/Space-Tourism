@@ -1,6 +1,8 @@
 import { Fragment, useContext } from "react";
 import Header from "../components/Header";
 
+import { useParams } from "react-router-dom";
+
 import homeImage from "../assets/home/background-home-desktop.jpg";
 import destinationImage from "../assets/destination/background-destination-desktop.jpg";
 import crewImage from "../assets/crew/background-crew-desktop.jpg";

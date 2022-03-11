@@ -28,11 +28,9 @@ const Destination: React.FC<destinationProps> = (props) => {
 
   useEffect(() => {
     const animationInterval = setTimeout(() => {
-      console.log("false");
       setAnimation(false);
     }, 1500);
     setAnimation(true);
-    console.log("true");
     return () => {
       clearInterval(animationInterval);
     };

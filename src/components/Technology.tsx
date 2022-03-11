@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import classes from "./Destination.module.css";
 
 import launchImage from "../assets/technology/image-launch-vehicle-portrait.jpg";
@@ -26,11 +26,9 @@ const Technology: React.FC<technologyProps> = (props) => {
 
   useEffect(() => {
     const animationInterval = setTimeout(() => {
-      console.log("false");
       setAnimation(false);
     }, 1500);
     setAnimation(true);
-    console.log("true");
     return () => {
       clearInterval(animationInterval);
     };
