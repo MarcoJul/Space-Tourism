@@ -63,7 +63,12 @@ const Destination: React.FC<destinationProps> = (props) => {
         <span className={classes.sectionNumber}>01</span> Pick Your Destination
       </h2>
       <div className={classes.content}>
-        <img src={destinationImage} className={classes.image} />
+        <img
+          src={destinationImage}
+          className={`${classes.image} ${
+            animation ? classes.animationScale : ""
+          }`}
+        />
         <div className={classes.textBox}>
           <nav>
             <ul className={classes.planetNav}>

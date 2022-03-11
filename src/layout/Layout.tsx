@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import homeImage from "../assets/home/background-home-desktop.jpg";
 import destinationImage from "../assets/destination/background-destination-desktop.jpg";
 import crewImage from "../assets/crew/background-crew-desktop.jpg";
+import techBackImage from "../assets/technology/background-technology-desktop.jpg";
 
 import classes from "./Layout.module.css";
 import StatusContext from "../store/status-context";
@@ -21,6 +22,9 @@ const Layout: React.FC = (props) => {
   }
   if (ctx.screen === "crew") {
     backgroundImage = crewImage;
+  }
+  if (ctx.screen === "technology") {
+    backgroundImage = techBackImage;
   }
 
   return (

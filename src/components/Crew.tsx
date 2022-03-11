@@ -3,26 +3,25 @@ import { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import classes from "./Destination.module.css";
 
-import moonImage from "../assets/destination/image-moon.png";
-import marsImage from "../assets/destination/image-mars.png";
-import europaImage from "../assets/destination/image-europa.png";
-import titanImage from "../assets/destination/image-titan.png";
+import markImage from "../assets/crew/image-mark-shuttleworth.png";
+import douglasImage from "../assets/crew/image-douglas-hurley.png";
+import anoushehImage from "../assets/crew/image-anousheh-ansari.png";
+import victorImage from "../assets/crew/image-victor-glover.png";
 import StatusContext from "../store/status-context";
 
-interface destinationProps {
+interface crewProps {
   items: {
     name: string;
     images: { png: string; webp: string };
-    description: string;
-    distance: string;
-    travel: string;
+    role: string;
+    bio: string;
   }[];
 }
 
-const Crew: React.FC<destinationProps> = (props) => {
+const Crew: React.FC<crewProps> = (props) => {
   const ctx = useContext(StatusContext);
   const [animation, setAnimation] = useState(true);
-  let destinationPlanet = props.items[0];
+  let crewMember = props.items[0];
 
   const { destinationStatus } = ctx;
 
@@ -38,23 +37,23 @@ const Crew: React.FC<destinationProps> = (props) => {
     };
   }, [destinationStatus]);
 
-  let destinationImage;
-  if (ctx.destinationStatus === "moon") {
-    destinationImage = moonImage;
-    destinationPlanet = props.items[0];
+  let crewImage;
+  if (ctx.crewStatus === "Douglas") {
+    crewImage = douglasImage;
+    crewMember = props.items[0];
   }
-  if (ctx.destinationStatus === "mars") {
-    destinationImage = marsImage;
+  if (ctx.crewStatus === "Mark") {
+    crewImage = markImage;
 
-    destinationPlanet = props.items[1];
+    crewMember = props.items[1];
   }
-  if (ctx.destinationStatus === "europa") {
-    destinationImage = europaImage;
-    destinationPlanet = props.items[2];
+  if (ctx.crewStatus === "Victor") {
+    crewImage = victorImage;
+    crewMember = props.items[2];
   }
-  if (ctx.destinationStatus === "titan") {
-    destinationImage = titanImage;
-    destinationPlanet = props.items[3];
+  if (ctx.crewStatus === "Anousheh") {
+    crewImage = anoushehImage;
+    crewMember = props.items[3];
   }
 
   return (
@@ -63,42 +62,42 @@ const Crew: React.FC<destinationProps> = (props) => {
         <span className={classes.sectionNumber}>01</span> Pick Your Destination
       </h2>
       <div className={classes.content}>
-        <img src={destinationImage} className={classes.image} />
+        <img src={crewImage} className={classes.image} />
         <div className={classes.textBox}>
           <nav>
             <ul className={classes.planetNav}>
               <li>
                 <NavLink
-                  to="/destination/moon"
+                  to="/crew/douglashurley"
                   className={classes.planetLink}
-                  onClick={() => ctx.setDestination("moon")}
+                  onClick={() => ctx.setCrew("Douglas")}
                 >
                   Moon
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/destination/mars"
+                  to="/crew/markshuttleworth"
                   className={classes.planetLink}
-                  onClick={() => ctx.setDestination("mars")}
+                  onClick={() => ctx.setCrew("Mark")}
                 >
                   Mars
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/destination/europa"
+                  to="/crew/victorglover"
                   className={classes.planetLink}
-                  onClick={() => ctx.setDestination("europa")}
+                  onClick={() => ctx.setCrew("Victor")}
                 >
                   Europa
                 </NavLink>
               </li>
               <li>
                 <NavLink
-                  to="/destination/titan"
+                  to="/crew/anoushehsunari"
                   className={classes.planetLink}
-                  onClick={() => ctx.setDestination("titan")}
+                  onClick={() => ctx.setCrew("Anousheh")}
                 >
                   Titan
                 </NavLink>
@@ -108,17 +107,13 @@ const Crew: React.FC<destinationProps> = (props) => {
           <h3
             className={`${classes.title} ${animation ? classes.animation : ""}`}
           >
-            {destinationPlanet.name}
+            {crewMember.name}
           </h3>
-          <p className={classes.text}>{destinationPlanet.description}</p>
+          <p className={classes.text}>{crewMember.role}</p>
           <div className={classes.dataSection}>
             <div className={classes.dataBox}>
               <p className={classes.dataDescription}>AVG. DISTANCE</p>
-              <p className={classes.data}>{destinationPlanet.distance}</p>
-            </div>
-            <div className={classes.dataBox}>
-              <p className={classes.dataDescription}>EST.TRAVEL TIME</p>
-              <p className={classes.data}>{destinationPlanet.travel}</p>
+              <p className={classes.data}>{crewMember.bio}</p>
             </div>
           </div>
         </div>

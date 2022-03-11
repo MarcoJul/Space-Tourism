@@ -62,6 +62,12 @@
   animation-timing-function: ease-out;
 }
 
+.animationScale {
+  animation-name: scaleImage;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+}
+
 .text {
   font-size: 1.8rem;
   line-height: 3.2rem;
@@ -103,5 +109,17 @@
   100% {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes scaleImage {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
