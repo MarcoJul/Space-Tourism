@@ -3,6 +3,7 @@ import Header from "../components/Header";
 
 import homeImage from "../assets/home/background-home-desktop.jpg";
 import destinationImage from "../assets/destination/background-destination-desktop.jpg";
+import crewImage from "../assets/crew/background-crew-desktop.jpg";
 
 import classes from "./Layout.module.css";
 import StatusContext from "../store/status-context";
@@ -17,6 +18,9 @@ const Layout: React.FC = (props) => {
   }
   if (ctx.screen === "destination") {
     backgroundImage = destinationImage;
+  }
+  if (ctx.screen === "crew") {
+    backgroundImage = crewImage;
   }
 
   return (

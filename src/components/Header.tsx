@@ -34,7 +34,13 @@ const Header = () => {
               </NavLink>
             </li>
             <li className={classes.headerList}>
-              <span className={classes.bold}>02</span> Crew
+              <NavLink
+                to="/crew/douglashurley"
+                className={classes.headerLink}
+                onClick={() => ctx.setScreen("crew")}
+              >
+                <span className={classes.bold}>02</span> Crew
+              </NavLink>
             </li>
             <li className={classes.headerList}>
               <span className={classes.bold}>03</span> Technology
